@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Kunwar - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+        
+</head>
+<body class="bg-gray-900 text-white smooth-scroll dark:bg-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Balls Animated Background -->
+    <canvas id="balls-bg"></canvas>
+    <!-- Mouse Follower Ball -->
+    <div id="follower-ball"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 w-full z-50 bg-transparent transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-extrabold text-indigo-400">Ankit Kunwar</span>
+                </div>
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="#home" class="hover:text-indigo-400 transition">Home</a>
+                    <a href="#about" class="hover:text-indigo-400 transition">About</a>
+                    <a href="#skills" class="hover:text-indigo-400 transition">Skills</a>
+                    <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
+                    <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
+                    <!-- Single Sliding Mode Switch Button -->
+                    <div id="mode-switch" class="mode-switch ml-2 sm:ml-3" title="Toggle dark/light mode" role="button" tabindex="0" aria-label="Toggle dark/light mode">
+                        <!-- Sun Icon -->
+                        <span class="icon-sun">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                                <path stroke="currentColor" stroke-width="2" d="M12 1v2m0 18v2m11-11h-2M3 12H1m16.95 6.95l-1.41-1.41M6.46 6.46L5.05 5.05m13.9 1.41l-1.41 1.41M6.46 17.54l-1.41 1.41"/>
+                            </svg>
+                        </span>
+                        <!-- Moon Icon -->
+                        <span class="icon-moon">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke="currentColor" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+                            </svg>
+                        </span>
+                        <span class="switch-handle">
+                            <!-- The handle shows nothing, but icons are next to track -->
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-800 to-purple-900 dark:from-indigo-800 dark:to-purple-900 transition-colors duration-300">
+        <div class="text-center max-w-xl mx-auto card py-10 px-4">
+            <div class="flex flex-col items-center">
+                <img src="photo.jpg" alt="Ankit Kunwar" class="rounded-full mb-6 border-4 border-indigo-500 shadow-lg w-32 h-32 object-cover">
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">
+                Hello, I'm <span class="text-indigo-400">Ankit Kunwar</span>
+            </h1>
+            <div class="mb-6 min-h-[40px] text-xl sm:text-2xl font-semibold text-gray-200 flex flex-col items-center justify-center">
+                <span id="typed-text"></span>
+                <span class="border-r-2 border-indigo-300 animate-pulse" id="typed-cursor" style="margin-left:2px;"></span>
+            </div>
+            <p class="text-lg text-gray-300 mb-8">
+                I help companies and individuals build impactful, scalable digital products. I specialize in modern web development, delivering reliable and user-focused solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-7 rounded-lg shadow transition mb-2 sm:mb-0">Contact Me</a>
+                <a href="Ankit-Kunwar-cv .pdf" download class="bg-white text-indigo-700 border border-indigo-600 hover:bg-indigo-50 font-bold py-2 px-7 rounded-lg shadow transition flex items-center" title="Download CV">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m7-7H5"/><path d="M12 19l0 0"/></svg>
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-800 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center card p-6 md:p-10">
+                <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
+                    <img src="photo.jpg" alt="Ankit Kunwar" class="rounded-full shadow-lg w-56 h-56 object-cover">
+                </div>
+                <div class="md:w-1/2 md:pl-8">
+                    <p class="text-lg mb-4">
+                        I'm <span class="font-semibold">Ankit Kunwar</span>, a passionate web developer with a knack for creating dynamic and responsive web applications. With a strong foundation in modern web technologies, I love turning ideas into reality through clean and efficient code.
+                    </p>
+                    <p class="text-lg">
+                        My goal is to build user-friendly and innovative solutions that make a difference. When I'm not coding, you can find me exploring new technologies or working on exciting side projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900 dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Skill -->
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">HTML</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Proficient</span>
+                        <span class="text-sm font-bold">95%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-indigo-500 h-3 rounded" style="width: 95%; transition: width 1s;"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">CSS</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Proficient</span>
+                        <span class="text-sm font-bold">92%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-indigo-400 h-3 rounded" style="width: 92%; transition: width 1s;"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Advanced</span>
+                        <span class="text-sm font-bold">90%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-yellow-400 h-3 rounded" style="width: 90%; transition: width 1s;"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">React</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Advanced</span>
+                        <span class="text-sm font-bold">87%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-blue-400 h-3 rounded" style="width: 87%; transition: width 1s;"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">Node.js</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Intermediate</span>
+                        <span class="text-sm font-bold">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-green-400 h-3 rounded" style="width: 80%; transition: width 1s;"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">Python</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Intermediate</span>
+                        <span class="text-sm font-bold">78%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-green-300 h-3 rounded" style="width: 78%; transition: width 1s;"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">Git</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Proficient</span>
+                        <span class="text-sm font-bold">88%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-red-400 h-3 rounded" style="width: 88%; transition: width 1s;"></div>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-xl text-center card dark:bg-gray-800">
+                    <h3 class="text-xl font-semibold mb-2">Tailwind CSS</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm">Advanced</span>
+                        <span class="text-sm font-bold">91%</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded h-3 mb-1">
+                        <div class="bg-indigo-300 h-3 rounded" style="width: 91%; transition: width 1s;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Tree View) -->
+    <section id="projects" class="py-20 bg-gray-800 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12">Projects</h2>
+            <div id="project-tree" class="max-w-2xl mx-auto">
+                <div class="tree-node tree-project card">
+                    <div class="tree-toggle flex items-center" data-node="0">
+                        <svg class="w-5 h-5 mr-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+                        <span class="font-semibold text-lg">E-Commerce Platform</span>
+                    </div>
+                    <div class="tree-children mt-2 pl-6 hidden">
+                        <ul class="list-disc text-gray-300 dark:text-gray-300">
+                            <li><span class="font-semibold">Stack:</span> React, Node.js, Express, MongoDB</li>
+                            <li><span class="font-semibold">Features:</span> User authentication, product search, payment integration, admin dashboard</li>
+                            <li><span class="font-semibold">Role:</span> Full-stack Developer</li>
+                            <li><span class="font-semibold">Demo:</span> <a href="#" class="text-indigo-400 hover:underline">View Project</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tree-node tree-project card">
+                    <div class="tree-toggle flex items-center" data-node="1">
+                        <svg class="w-5 h-5 mr-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+                        <span class="font-semibold text-lg">Task Manager App</span>
+                    </div>
+                    <div class="tree-children mt-2 pl-6 hidden">
+                        <ul class="list-disc text-gray-300 dark:text-gray-300">
+                            <li><span class="font-semibold">Stack:</span> Python, Django, SQLite</li>
+                            <li><span class="font-semibold">Features:</span> Task creation, reminders, priority labels, calendar view</li>
+                            <li><span class="font-semibold">Role:</span> Backend & Frontend Developer</li>
+                            <li><span class="font-semibold">Demo:</span> <a href="#" class="text-indigo-400 hover:underline">View Project</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tree-node tree-project card">
+                    <div class="tree-toggle flex items-center" data-node="2">
+                        <svg class="w-5 h-5 mr-2 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+                        <span class="font-semibold text-lg">Portfolio Website</span>
+                    </div>
+                    <div class="tree-children mt-2 pl-6 hidden">
+                        <ul class="list-disc text-gray-300 dark:text-gray-300">
+                            <li><span class="font-semibold">Stack:</span> HTML, Tailwind CSS, JavaScript</li>
+                            <li><span class="font-semibold">Features:</span> Responsive design, animated backgrounds, skills visualization</li>
+                            <li><span class="font-semibold">Role:</span> Designer & Developer</li>
+                            <li><span class="font-semibold">Demo:</span> <a href="#" class="text-indigo-400 hover:underline">View Project</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12">Contact Me</h2>
+        <div class="max-w-lg mx-auto bg-gray-800 rounded-2xl p-8 shadow-md card dark:bg-gray-800">
+            <form action="https://formspree.io/f/mvgqgwnb" method="POST" id="contactForm" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-lg font-medium mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="w-full px-4 py-2 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:bg-gray-900 dark:text-white"
+                        placeholder="Your Name">
+                </div>
+                <div>
+                    <label for="email" class="block text-lg font-medium mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-4 py-2 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:bg-gray-900 dark:text-white"
+                        placeholder="your.email@example.com">
+                </div>
+                <div>
+                    <label for="subject" class="block text-lg font-medium mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" required
+                        class="w-full px-4 py-2 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:bg-gray-900 dark:text-white"
+                        placeholder="Subject">
+                </div>
+                <div>
+                    <label for="message" class="block text-lg font-medium mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                        class="w-full px-4 py-2 rounded bg-gray-900 text-white focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:bg-gray-900 dark:text-white"
+                        placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit"
+                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg transition">Send
+                    Message</button>
+            </form>
+            <div id="formSuccess" class="hidden text-green-400 mt-4 text-center">
+                Thank you! Your message has been sent.
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle form submission and show success message -->
+    <script>
+        const form = document.getElementById("contactForm");
+        const formSuccess = document.getElementById("formSuccess");
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                form.reset();
+                formSuccess.classList.remove("hidden");
+            } else {
+                alert("Oops! There was a problem submitting your form.");
+            }
+        });
+    </script>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Ankit Kunwar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+
+    <!-- JavaScript for Navbar Scroll, Balls Animation, Typing, Project Tree, Contact Form, Dark Mode, Follower Ball -->
+     <script src="script.js"></script>
+
+        
+        
+    
+</body>
+</html>
